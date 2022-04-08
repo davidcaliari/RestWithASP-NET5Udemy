@@ -61,3 +61,9 @@ C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator
 C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\obj\Debug\net6.0\RestWithASPNETUdemy.pdb
 C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\obj\Debug\net6.0\RestWithASPNETUdemy.genruntimeconfig.cache
 C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\obj\Debug\net6.0\ref\RestWithASPNETUdemy.dll
+C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\MySqlConnector.dll
+C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\obj\Debug\net6.0\RestWithASPNETUdemy.csproj.CopyComplete
