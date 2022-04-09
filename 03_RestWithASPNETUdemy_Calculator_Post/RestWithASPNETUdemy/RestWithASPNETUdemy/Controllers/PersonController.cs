@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using RestWithASPNETUdemy.Model;
-using RestWithASPNETUdemy.Business.Implementations;
+using RestWithASPNETUdemy.Business;
 
 namespace RestWithASPNETUdemy.Controllers
 {
@@ -53,24 +53,5 @@ namespace RestWithASPNETUdemy.Controllers
             _personBusiness.Delete(id);
             return NoContent();
         }
-
-        private bool IsNumeric(string strNumber)
-        {
-            double number;
-            bool isNumber = double.TryParse(strNumber, System.Globalization.NumberStyles.Any, System.Globalization.NumberFormatInfo.InvariantInfo, out number);
-            return isNumber;
-        }
-        private decimal ConvertToDecimal(string strNumber)
-        {
-            decimal decimalValue;
-            if (decimal.TryParse(strNumber, out decimalValue))
-            {
-                return decimalValue;
-            }
-            return 0;
-
-        }
-
-
     }
 }

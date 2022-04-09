@@ -1,5 +1,5 @@
 ﻿using RestWithASPNETUdemy.Model;
-using RestWithASPNETUdemy.Repository.Implementations;
+using RestWithASPNETUdemy.Repository;
 
 namespace RestWithASPNETUdemy.Business.Implementations
 {

@@ -1,6 +1,6 @@
 ﻿using RestWithASPNETUdemy.Model;
 
-namespace RestWithASPNETUdemy.Business.Implementations
+namespace RestWithASPNETUdemy.Business
 {
     public interface IPersonBusiness
     {
