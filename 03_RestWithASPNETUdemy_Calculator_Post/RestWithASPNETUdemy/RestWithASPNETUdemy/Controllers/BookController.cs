@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using RestWithASPNETUdemy.Model;
 using RestWithASPNETUdemy.Business;
+using RestWithASPNETUdemy.Data.VO;
 
 namespace RestWithASPNETUdemy.Controllers
 {
@@ -29,19 +29,19 @@ namespace RestWithASPNETUdemy.Controllers
         public IActionResult Get(long id)
         {
             var book = _bookBusiness.FindByID(id);
-            if(book == null) return NotFound();
+            if (book == null) return NotFound();
             return Ok(book);
         }
-        
+
         [HttpPost]
-        public IActionResult Post([FromBody] Book book)
+        public IActionResult Post([FromBody] BookVO book)
         {
-            if(book == null) return BadRequest();
+            if (book == null) return BadRequest();
             return Ok(_bookBusiness.Create(book));
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] Book book)
+        public IActionResult Put([FromBody] BookVO book)
         {
             if (book == null) return BadRequest();
             return Ok(_bookBusiness.Update(book));
