@@ -80,3 +80,7 @@ C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator
 C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy\RestWithASPNETUdemy\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
