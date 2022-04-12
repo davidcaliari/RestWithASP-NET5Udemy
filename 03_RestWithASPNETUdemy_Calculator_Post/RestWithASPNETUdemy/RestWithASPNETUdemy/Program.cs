@@ -52,6 +52,14 @@ builder.Services.AddSwaggerGen(c =>
         });
 });
 
+//Adicionando CORS
+builder.Services.AddCors(options => options.AddDefaultPolicy(builder =>
+{
+    builder.AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader();
+}));
+
 //Dependency Injection
 builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
 builder.Services.AddScoped<IBookBusiness, BookBusinessImplementation>();
@@ -114,6 +122,8 @@ option.AddRedirect("^$", "swagger");
 app.UseRewriter(option);
 
 app.UseAuthorization();
+
+app.UseCors();
 
 app.MapControllers();
 app.MapControllerRoute("DefaultApi", "{controller=values}/{id?}");
