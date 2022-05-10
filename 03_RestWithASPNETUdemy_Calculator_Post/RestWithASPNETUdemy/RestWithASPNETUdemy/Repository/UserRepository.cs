@@ -24,7 +24,7 @@ namespace RestWithASPNETUdemy.Repository
 
         public User RefreshUserInfo(User user)
         {
-            if (_context.Users.Any(p => p.Id.Equals(user.Id))) return null;
+            if (!_context.Users.Any(p => p.Id.Equals(user.Id))) return null;
 
             var result = _context.Users.SingleOrDefault(p => p.Id.Equals(user.Id));
             if (result != null)
@@ -44,6 +44,21 @@ namespace RestWithASPNETUdemy.Repository
             {
                 return result;
             }
+        }
+
+        public User ValidadeCredentials(string userName)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.UserName == userName);
+            return user;
+        }
+
+        public bool RevokeToken(string userName)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.UserName == userName);
+            if(user is null) return false;
+            user.RefreshToken = null;
+            _context.SaveChanges();
+            return true;
         }
 
         private string ComputeHash(string input, SHA256CryptoServiceProvider sHA256CryptoServiceProvider)

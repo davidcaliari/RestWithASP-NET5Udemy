@@ -53,5 +53,43 @@ namespace RestWithASPNETUdemy.Business.Implementations
                 );
             
         }
+
+        public TokenVO ValidateCredentials(TokenVO token)
+        {
+            var acessToken = token.AcessToken;
+            var refreshToken = token.RefreshToken;
+
+            var principal = _tokenService.GetPrincipalFromExpiredToken(acessToken);
+            
+            var userName = principal.Identity.Name;
+            
+            var user = _repository.ValidadeCredentials(userName);
+
+            if (user == null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now) return null;
+
+            acessToken = _tokenService.GenerateAcessToken(principal.Claims);
+            refreshToken = _tokenService.GenerateRefreshToken();
+
+            user.RefreshToken = refreshToken;
+
+            _repository.RefreshUserInfo(user);
+
+            DateTime createDate = DateTime.Now;
+            DateTime expirationDate = createDate.AddMinutes(_configuration.Minutes);
+
+            return new TokenVO(
+                true,
+                createDate.ToString(DATE_FORMAT),
+                expirationDate.ToString(DATE_FORMAT),
+                acessToken,
+                refreshToken
+                );
+
+        }
+
+        public bool RevokeToken(string userName)
+        {
+            return _repository.RevokeToken(userName);
+        }
     }
 }

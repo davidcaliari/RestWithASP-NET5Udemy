@@ -60,7 +60,7 @@ namespace RestWithASPNETUdemy.Services.Implementations
 
             var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out securityToken);
             var jwtSecurityToken = securityToken as JwtSecurityToken;
-            if (jwtSecurityToken != null ||
+            if (jwtSecurityToken == null ||
                 !jwtSecurityToken.Header.Alg.Equals(
                     SecurityAlgorithms.HmacSha256, 
                     StringComparison.InvariantCulture))
