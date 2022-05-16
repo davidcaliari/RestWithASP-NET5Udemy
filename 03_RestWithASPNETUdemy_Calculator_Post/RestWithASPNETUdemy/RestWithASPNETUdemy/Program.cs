@@ -121,7 +121,7 @@ var app = builder.Build();
 //Verifica se é development e executa as migrations
 if (app.Environment.IsDevelopment())
 {
-    MigrateDatabase(connection);
+    //MigrateDatabase(connection);
     /*
     using(var scope = app.Services.CreateScope())
     {
