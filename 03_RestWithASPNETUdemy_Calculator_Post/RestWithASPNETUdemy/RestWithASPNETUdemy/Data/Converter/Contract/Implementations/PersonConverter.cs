@@ -15,6 +15,7 @@ namespace RestWithASPNETUdemy.Data.Converter.Contract.Implementations
                 FirstName = origin.FirstName,
                 LastName = origin.LastName,
                 Gender = origin.Gender,
+                Enabled = origin.Enabled,
                 Address = origin.Address
             };
         }
@@ -28,6 +29,7 @@ namespace RestWithASPNETUdemy.Data.Converter.Contract.Implementations
                 FirstName = origin.FirstName,
                 LastName = origin.LastName,
                 Gender = origin.Gender,
+                Enabled = origin.Enabled,
                 Address = origin.Address
             };
         }
