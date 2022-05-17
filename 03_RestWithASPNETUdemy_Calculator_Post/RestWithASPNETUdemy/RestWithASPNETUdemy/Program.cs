@@ -28,7 +28,7 @@ builder.Logging.AddConsole();
 
 builder.Services.AddControllers();
 
-//Pegando a string de connexção
+//Pegando a string de connexÃ§Ã£o
 var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"];
 builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, new MySqlServerVersion(new Version())));
 
@@ -46,7 +46,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1",
         new Microsoft.OpenApi.Models.OpenApiInfo
         {
-            Title = "REST API's From 0 to Azure with ASP >NET Core 5 and Docker",
+            Title = "REST API's From 0 to Azure with ASP >NET Core 5 and Docker . Foo Bar",
             Version = "v1",
             Description = "API RESTful developed in course 'REST API's From 0 to Azure with ASP .NET Core 5 and Docker'",
             Contact = new Microsoft.OpenApi.Models.OpenApiContact
@@ -57,7 +57,7 @@ builder.Services.AddSwaggerGen(c =>
         });
 });
 
-//Configurando para preecher assim que startar a aplicação o token configurations
+//Configurando para preecher assim que startar a aplicaÃ§Ã£o o token configurations
 var tokenConfigurations = new TokenConfiguration();
 new ConfigureFromConfigurationOptions<TokenConfiguration>(
         builder.Configuration.GetSection("TokenConfigurations")
@@ -66,7 +66,7 @@ new ConfigureFromConfigurationOptions<TokenConfiguration>(
 
 //Injetando o token
 builder.Services.AddSingleton(tokenConfigurations);
-//Injetando autenticação
+//Injetando autenticaÃ§Ã£o
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -86,7 +86,7 @@ builder.Services.AddAuthentication(options =>
         };
     });
 
-//Injetando autorização
+//Injetando autorizaÃ§Ã£o
 builder.Services.AddAuthorization(auth =>
 {
     auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
@@ -118,7 +118,7 @@ builder.Services.AddTransient<ITokenService, TokenService>();
 
 var app = builder.Build();
 
-//Verifica se é development e executa as migrations
+//Verifica se Ã© development e executa as migrations
 if (app.Environment.IsDevelopment())
 {
     MigrateDatabase(connection);
@@ -158,10 +158,10 @@ void MigrateDatabase(string connection)
 
 app.UseHttpsRedirection();
 
-//Responsável por gerar o Json da documentação.
+//ResponsÃ¡vel por gerar o Json da documentaÃ§Ã£o.
 app.UseSwagger();
 
-//Responsável por gerar o HTML para acessos as rotas.
+//ResponsÃ¡vel por gerar o HTML para acessos as rotas.
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "REST API's From 0 to Azure with ASP >NET Core 5 and Docker - v1");
