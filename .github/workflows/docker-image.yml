@@ -35,5 +35,5 @@ jobs:
     - name: Azure WebApp Container - Application Deployment
       uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{ DOCKER_SERVER }}
+        app-name: ${{ secrets.DOCKER_SERVER }}
         images:  ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/${{ secrets.IMAGE_NAME }}:${{github.run_id}}
