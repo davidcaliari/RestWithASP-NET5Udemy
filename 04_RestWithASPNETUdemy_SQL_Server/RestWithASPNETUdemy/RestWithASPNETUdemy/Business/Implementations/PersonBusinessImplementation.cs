@@ -29,12 +29,12 @@ namespace RestWithASPNETUdemy.Business.Implementations
             var size = (pageSize < 1) ? 10 : pageSize;
             var offset = page > 0 ? (page - 1) * size : 0;
 
-            string query = @"select * from person p where 1 = 1 ";
-            if (!string.IsNullOrWhiteSpace(name)) query += $" and p.first_name like '%{name}%' ";
-            query += $"order by p.first_name {sort} limit {size} offset {offset}";
+            string query = @"SELECT * FROM person p WHERE 1 = 1 ";
+            if (!string.IsNullOrWhiteSpace(name)) query += $" AND p.first_name like '%{name}%' ";
+            query += $"ORDER BY p.first_name {sort} OFFSET {offset} ROWS FETCH NEXT {size} ROWS ONLY";
 
-            string countQuery = @"select count(*) from person p where 1 = 1 ";
-            if (!string.IsNullOrWhiteSpace(name)) countQuery += $" and p.first_name like '%{name}%' ";
+            string countQuery = @"SELECT COUNT(*) FROM person p WHERE 1 = 1 ";
+            if (!string.IsNullOrWhiteSpace(name)) countQuery += $" AND p.first_name like '%{name}%' ";
 
             var persons = _repository.FindWithPagedSearch(query);
             int totalResults = _repository.GetCount(countQuery);

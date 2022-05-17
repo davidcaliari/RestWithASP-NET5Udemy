@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Rewrite;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -29,8 +30,8 @@ builder.Logging.AddConsole();
 builder.Services.AddControllers();
 
 //Pegando a string de connexção
-var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"];
-builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, new MySqlServerVersion(new Version())));
+var connection = builder.Configuration["MSSQLServerSQLConnection:MSSQLServerSQLConnectionString"];
+builder.Services.AddDbContext<MSSQLContext>(options => options.UseSqlServer(connection));
 
 //Configurando HATEOAS
 var filterOptions = new HyperMediaFilterOptions();
@@ -136,7 +137,7 @@ void MigrateDatabase(string connection)
 {
     try
     {
-        var evolveConnection = new MySqlConnector.MySqlConnection(connection);
+        var evolveConnection = new SqlConnection(connection);
         var evolve = new Evolve.Evolve(evolveConnection, msg => Log.Information(msg))
         {
             Locations = new List<string> { "db/migrations", "db/dataset" },

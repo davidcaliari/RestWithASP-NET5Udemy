@@ -2,14 +2,14 @@
 
 namespace RestWithASPNETUdemy.Model.Context
 {
-    public class MySQLContext : DbContext
+    public class MSSQLContext : DbContext
     {
-        public MySQLContext()
+        public MSSQLContext()
         {
 
         }
 
-        public MySQLContext(DbContextOptions<MySQLContext> options) : base(options)
+        public MSSQLContext(DbContextOptions<MSSQLContext> options) : base(options)
         {
             
         }
