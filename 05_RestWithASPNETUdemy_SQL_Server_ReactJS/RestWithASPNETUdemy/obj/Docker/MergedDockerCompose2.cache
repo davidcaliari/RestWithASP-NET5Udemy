@@ -1,0 +1,7 @@
+services:
+  rest-with-asp-net-udemy:
+    build:
+      context: C:\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\03_RestWithASPNETUdemy_Calculator_Post\RestWithASPNETUdemy
+      dockerfile: RestWithASPNETUdemy/Dockerfile
+    image: restwithaspnetudemy
+version: '3.4'
