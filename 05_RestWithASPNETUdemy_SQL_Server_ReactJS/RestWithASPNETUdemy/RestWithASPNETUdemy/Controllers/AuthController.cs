@@ -37,7 +37,7 @@ namespace RestWithASPNETUdemy.Controllers
             return Ok(token);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("revoke")]
         [Authorize("Bearer")]
         public IActionResult Revoke()

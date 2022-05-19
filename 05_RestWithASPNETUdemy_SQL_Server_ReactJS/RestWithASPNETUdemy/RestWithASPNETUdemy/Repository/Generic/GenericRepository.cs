@@ -66,7 +66,7 @@ namespace RestWithASPNETUdemy.Repository.Generic
             {
                 try
                 {
-                    dataset.Add(result);
+                    dataset.Remove(result);
                     _context.SaveChanges();
                 }
                 catch (Exception)

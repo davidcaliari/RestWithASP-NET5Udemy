@@ -36,6 +36,7 @@ builder.Services.AddDbContext<MSSQLContext>(options => options.UseSqlServer(conn
 //Configurando HATEOAS
 var filterOptions = new HyperMediaFilterOptions();
 filterOptions.ContentResponseEnricherList.Add(new PersonEnricher());
+filterOptions.ContentResponseEnricherList.Add(new BookEnricher());
 builder.Services.AddSingleton(filterOptions);
 
 //Versioning API
